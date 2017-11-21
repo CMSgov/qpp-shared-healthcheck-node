@@ -1,0 +1,22 @@
+{
+  "name": "qpp-shared-health-check-node",
+  "version": "0.1.0",
+  "description": "health check endpoint for QPP APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.cms.gov/qpp/qpp-shared-healthcheck-node.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "supertest": "^3.0.0"
+  }
+}
