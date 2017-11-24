@@ -1,6 +1,6 @@
 {
   "name": "qpp-shared-health-check-node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "health check endpoint for QPP APIs",
   "main": "index.js",
   "scripts": {
