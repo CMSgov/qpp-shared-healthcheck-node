@@ -6,7 +6,7 @@ This is the common QPP health check endpoint that is used by QPP services to mak
 * Node versions tested: 6.9.1, 8.8.1
 
 ## Adding to your project
-`npm install @CMSGov/qpp-shared-healthcheck-node`
+`npm install qpp-shared-healthcheck-node`
 
 ## Testing locally
 You may need to add yarn to your local environment in order to install the dependencies.  To do so, run `npm install yarn -g` in your terminal.
