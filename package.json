@@ -1,6 +1,6 @@
 {
   "name": "qpp-shared-healthcheck-node",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "health check endpoint for QPP APIs",
   "main": "index.js",
   "scripts": {
@@ -12,11 +12,12 @@
   },
   "author": "",
   "license": "UNLICENSED",
-  "dependencies": {
-    "express": "^4.16.2"
-  },
   "devDependencies": {
     "mocha": "^4.0.1",
+    "express": "^4.0.0",
     "supertest": "^3.0.0"
+  },
+  "peerDependencies": {
+    "express": "^4.0.0"
   }
 }
