@@ -22,7 +22,7 @@ Basic usage could be as follows:
 var express = require('express')
 var app = express()
 var router = express.Router()
-var endPoint = require('qpp-shared-health-check-node'); 
+var endPoint = require('qpp-shared-healthcheck-node');
 
 app.use(endPoint); 
 app.listen(3000);
