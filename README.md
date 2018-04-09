@@ -19,13 +19,26 @@ Once the package has been installed, you can load the route into wherever routes
 Basic usage could be as follows:
 
 ```javascript
-var express = require('express')
-var app = express()
-var router = express.Router()
-var endPoint = require('qpp-shared-healthcheck-node');
+const express = require('express');
+const app = express();
+const router = express.Router();
 
-app.use(endPoint); 
+const sharedHealthcheck = require('qpp-shared-healthcheck-node');
+const healthcheck = sharedHealthcheck.create();
+
+app.use(healthcheck);
 app.listen(3000);
+```
+
+You can also enable an RSS check to return 503s when memory usage crosses a configured threshold:
+
+```javascript
+const healthcheck = sharedHealthcheck.create({
+  // Limit process to 1.4GB
+  maxRssBytes: 1400000000
+});
+
+app.use(healthcheck);
 ```
 
 Once the application is running, you can hit the endpoint at `/health`.  In this case with our simple application above, we would start the application and navigate to `localhost:3000/health` and expect to see some results.
