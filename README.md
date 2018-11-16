@@ -30,7 +30,7 @@ app.use(healthcheck);
 app.listen(3000);
 ```
 
-You can also enable an RSS check to return 503s when memory usage crosses a configured threshold:
+You can enable an RSS check to return 503s when memory usage crosses a configured threshold:
 
 ```javascript
 const healthcheck = sharedHealthcheck.create({
@@ -39,6 +39,26 @@ const healthcheck = sharedHealthcheck.create({
 });
 
 app.use(healthcheck);
+```
+
+You can return a custom 200 message by passing an object with the `okMessage` property:
+
+```javascript
+const healthcheck = sharedHealthcheck.create({
+  okMessage: {
+    versions: {
+      customModule: 'v1.0.0'
+    },
+    status: 'ok'
+  }
+});
+
+app.use(healthcheck);
+```
+
+Response body:
+```
+{"versions":{"customModule":"v1.0.0"},"status":"ok"}
 ```
 
 Once the application is running, you can hit the endpoint at `/health`.  In this case with our simple application above, we would start the application and navigate to `localhost:3000/health` and expect to see some results.
