@@ -6,10 +6,12 @@ const sharedHealthCheck = {
    *
    * Valid options:
    *   {int}  maxRssBytes - the byte cutoff for high rss.
+   *   {Object} okMessage - the message body to return when responding with 200
    */
   create: function(options = {}) {
     const router = express.Router();
     const maxRssBytes = options.maxRssBytes;
+    const okMessage = options.okMessage || 'OK!\n'
 
     router.get('/health', function(req, res, next) {
       const rss = process.memoryUsage().rss;
@@ -28,7 +30,7 @@ const sharedHealthCheck = {
 
         res.status(503).send('High rss: ' + rss + '\n');
       } else {
-        res.status(200).send('OK!\n');
+        res.status(200).send(okMessage);
       }
     });
 

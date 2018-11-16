@@ -1,5 +1,6 @@
 const request = require('supertest');
 const express = require('express');
+const { assert } = require('chai');
 const app = express();
 const healthCheck = require('../index');
 
@@ -15,9 +16,9 @@ describe('QPP health check endpoint', () => {
   });
 
   context('when health check point is added to the app middleware', () => {
-    before(() =>{
+    beforeEach(() => {
       router = healthCheck.create();
-      app.use(function (req, res, next) {
+      app.use((req, res, next) => {
         router(req, res, next)
       });
     });
@@ -25,7 +26,45 @@ describe('QPP health check endpoint', () => {
     it('responds with 200', (done) => {
       request(app)
         .get('/health')
-        .expect(200, done);
+        .expect(200)
+        .end((err, res) => {
+          assert.equal(res.status, 200);
+          assert.equal(res.text, 'OK!\n');
+          done();
+        });
+    });
+  });
+
+  context('when health check point is added to the app middleware with a custom ok message', () => {
+    beforeEach(() => {
+      router = healthCheck.create({
+        okMessage: {
+          versions: {
+            customModule: 'v1.0.0'
+          },
+          status: 'ok'
+        }
+      });
+      app.use(function (req, res, next) {
+        router(req, res, next)
+      });
+    });
+
+    it('responds with 200 with the custom message', (done) => {
+      request(app)
+        .get('/health')
+        .expect(200)
+        .end((err, res) => {
+          assert.equal(res.text, JSON.stringify(
+            {
+              versions: {
+                customModule: 'v1.0.0'
+              },
+              status: 'ok'
+            }
+          ));
+          done();
+        })
     });
   });
 
