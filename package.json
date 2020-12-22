@@ -1,5 +1,5 @@
 {
-  "name": "@cmsgov/qpp-shared-healthcheck-node",
+  "name": "qpp-shared-healthcheck-node",
   "version": "0.3.1",
   "description": "Health check endpoint for QPP APIs",
   "main": "index.js",
