@@ -1,17 +1,17 @@
 {
-  "name": "qpp-shared-healthcheck-node",
+  "name": "@cmsgov/qpp-shared-healthcheck-node",
   "version": "0.3.0",
-  "description": "health check endpoint for QPP APIs",
+  "description": "Health check endpoint for QPP APIs",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.cms.gov/qpp/qpp-shared-healthcheck-node.git"
+    "url": "https://github.com/CMSgov/qpp-shared-healthcheck-node.git"
   },
-  "author": "",
-  "license": "UNLICENSED",
+  "author": "Centers for Medicare & Medicaid Services",
+  "license": "CC0-1.0",
   "devDependencies": {
     "chai": "^4.2.0",
     "express": "^4.0.0",
