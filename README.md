@@ -1,4 +1,5 @@
 # QPP Health Check Endpoint
+![Build](https://github.com/CMSgov/qpp-shared-healthcheck-node/workflows/Build%20-%20PR/badge.svg) [![npm version](https://badge.fury.io/js/qpp-shared-healthcheck-node.svg)](https://badge.fury.io/js/qpp-shared-healthcheck-node)
 This is the common QPP health check endpoint that is used by QPP services to make basic determinations if the service is up or down.
 
 ## Dependencies
