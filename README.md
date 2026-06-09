@@ -1,3 +1,9 @@
+This repository has been archived and is no longer maintained.
+
+The code is provided for historical reference and may contain unpatched or unknown vulnerabilities.
+
+It should not be used in production systems.
+
 # QPP Health Check Endpoint
 ![Build](https://github.com/CMSgov/qpp-shared-healthcheck-node/workflows/Build%20-%20PR/badge.svg) [![npm version](https://badge.fury.io/js/qpp-shared-healthcheck-node.svg)](https://badge.fury.io/js/qpp-shared-healthcheck-node)
 
